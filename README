@@ -1,0 +1,55 @@
+Where did the name Usurper come from?
+-------------------------------------
+Well, as many of you may know. This applet was mainly developed out of
+my frustration of not being able to memorize data which I do not use on
+a regular basis. Given that a large number of classes I was taking in
+college, at the time of writing, required that I memorize data that I in
+no way shape or form used on a regular basis I decided that I would
+create this applet to assist. In fact the one professor, who's first
+name was Rex tended to give tests which required this memorization of
+useless data. Hence, I basically created this applet to assist in owning
+Rex's classes. Some of you may know that Rex is Latin for King. Hence,
+the name Usurper was presented by a friend and roommate as an
+appropriate name since I was basically providing something to assist in
+the act of overcoming the king (Rex), :).
+
+Build Requirements (Debian Packages Listed)
+-------------------------------------------
+libpanel-applet2-0
+libpanel-applet2-dev
+libpoppler0c2
+libpoppler0c2-glib
+libpoppler-dev
+libpoppler-glib-dev
+pkg-config
+-- beyond that the standard packages for software development
+
+Build Process
+-------------
+$ make
+
+Install Process (Debian Only!!!!)
+---------------------------------
+# make install
+
+Before Use Setup
+----------------
+$ mkdir -p ~/.usurper/card_sets
+
+Use It
+------
+Right-click on your gnome tool bar and select "Add to Panel". Search for
+"CyphMemAid Applet" and select it. Then click the add button. You should
+see it appear in your gnome. Close the gnome "Add to Panel" window. Then
+left click on CyphMemAid applet in the tool bar, a preferences window
+should popup. In which you can adjust the quizing interval, number of
+cards to quiz per interval, the card set you want to be quized, the card
+set you want to edit (currently not functional), and allows you to
+specify a name for a new card set (which should contain NO spaces, use
+underscores). Note: Quizing will begin as soon as you either click the X
+in the upper right hand corner of the preferences window or as soon as
+you left click on the CyphMemAid applet while the preferencs window is
+open (this will close the preferences window). Also, note that currently
+it reads the available card sets at start up. So after you create a card
+set, if you would like to be tested on it you need to remove the applet
+from your gnome panel and add it again.

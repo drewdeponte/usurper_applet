@@ -1,0 +1,37 @@
+- Add controls to make sure that the num cards to quiz per set can never
+  be more than the actual number of cards in the selected set. This may
+  be best done by once a set is selected automatically check if it is
+  more than it is, and if so reduce the max of the field to the max size
+  of the set.
+
+- Implement the creation of a random subset of the currently select card
+  set the size of "Num Cards to Quiz". This should be pretty trivial. If
+  I malloc() enough space for "Num Cards to Quiz" * sizeof(int) then I
+  can iterate through and create a random number for each index ranging
+  from 0 to (num_cards_in_cur_set - 1). After building adding the code
+  to build this array I should add code to the quiz() function to use
+  this array of indexes rather than looping through the entire card set
+  from front to back.
+
+  ex:
+  rand_index = rand() % up_lim; /* random int in range [0,up_lim) */
+
+  This should be intelligent random selection in that it tracks what
+  values it has already chosen and will not select the same value more
+  than once in each random subset.
+
+  This creates a new restriction that the random subsets can only ever
+  be smaller (or as large) as the actual set of cards.
+
+- Add code that when the applet is start checks to see if ~/.usurper and
+  ~/.usurper/card_sets exist, if not then it should create them.
+
+- Add support for editing of cards, this will probably consist of
+  keeping individual tex files around for each card (using the same
+  naming scheme as the pdfs might be smart). Then just in place produce
+  pdf files. Rather than using /tmp/ as I currently am. This would allow
+  me to go back and incrementally go through the cards and allow the
+  user to select cards to edit. Using the thumbnail capability of the
+  lib popple may provide for a nice interface for doing this (but
+  probably not do to scaling issues. It would prob be better to just
+  display the cards scaled to 100% (which is hard enough to read).
